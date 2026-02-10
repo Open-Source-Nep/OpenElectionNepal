@@ -1,0 +1,47 @@
+@page "/voter/{voterId}"
+@using Microsoft.AspNetCore.Components
+@using System
+
+<h1>Voter Detail</h1>
+
+<div class="card mb-3" style="max-width:420px;">
+    <div class="card-body">
+        <h5 class="card-title">@voter?.Name</h5>
+        <h6 class="card-subtitle mb-2 text-muted">ID: @voterId</h6>
+        <p class="card-text">Token: <strong>@token</strong></p>
+        <div class="mb-3">
+            <img src="@QrUrl" alt="QR code" />
+        </div>
+        <div>
+            <button class="btn btn-primary" type="button" onclick="window.print()">Print QR</button>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string voterId { get; set; }
+
+    private Voter voter;
+    private string token;
+    private string QrUrl;
+
+    protected override void OnInitialized()
+    {
+        // TODO: fetch real voter data & token from Central system
+        voter = new Voter { Id = voterId, Name = $"Sample Voter ({voterId})" };
+        token = GenerateToken();
+        QrUrl = $"https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl={Uri.EscapeDataString(token)}";
+    }
+
+    private static string GenerateToken()
+    {
+        return Guid.NewGuid().ToString("N").Substring(0, 12).ToUpperInvariant();
+    }
+
+    private class Voter
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
+}

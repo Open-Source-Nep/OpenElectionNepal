@@ -1,0 +1,74 @@
+@page "/voter-search"
+@using Microsoft.AspNetCore.Components
+
+<h1>Voter Search</h1>
+
+<div class="mb-3">
+    <input class="form-control" placeholder="Search by name or ID" @bind="query" />
+</div>
+
+<div class="mb-3">
+    <button class="btn btn-primary" @onclick="Search">Search</button>
+    <button class="btn btn-secondary ms-2" @onclick="Clear">Clear</button>
+</div>
+
+@if (results != null && results.Count > 0)
+{
+    <ul class="list-group">
+        @foreach (var v in results)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <div><strong>@v.Name</strong></div>
+                    <div class="text-muted">ID: @v.Id</div>
+                </div>
+                <div>
+                    <a class="btn btn-sm btn-outline-primary" href="/voter/@v.Id">Details / Print</a>
+                </div>
+            </li>
+        }
+    </ul>
+}
+else if (hasSearched)
+{
+    <div class="alert alert-info mt-3">No voters found.</div>
+}
+
+@code {
+    private string query = string.Empty;
+    private List<Voter> results;
+    private bool hasSearched;
+
+    private void Search()
+    {
+        hasSearched = true;
+        // TODO: Replace with real API call to Central system
+        if (string.IsNullOrWhiteSpace(query))
+        {
+            results = new List<Voter>();
+            return;
+        }
+
+        // Simulated results for now
+        results = new List<Voter>
+        {
+            new Voter { Id = "V-1001", Name = "Ram Karki" },
+            new Voter { Id = "V-1002", Name = "Sita Sharma" }
+        }
+        .Where(v => v.Name.Contains(query, StringComparison.OrdinalIgnoreCase) || v.Id.Contains(query, StringComparison.OrdinalIgnoreCase))
+        .ToList();
+    }
+
+    private void Clear()
+    {
+        query = string.Empty;
+        results = null;
+        hasSearched = false;
+    }
+
+    private class Voter
+    {
+        public string Id { get; set; }
+        public string Name { get; set; }
+    }
+}
