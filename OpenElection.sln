@@ -30,6 +30,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenElection.HealthChecks",
 EndProject
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "openelection.booth.web", "openelection.booth.web\openelection.booth.web.esproj", "{04597E5A-42DC-47E5-8572-00A9ECF13C85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenElection.Assigner", "OpenElection.Assigner\OpenElection.Assigner.csproj", "{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -138,6 +140,18 @@ Global
 		{04597E5A-42DC-47E5-8572-00A9ECF13C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04597E5A-42DC-47E5-8572-00A9ECF13C85}.Release|x64.ActiveCfg = Release|Any CPU
 		{04597E5A-42DC-47E5-8572-00A9ECF13C85}.Release|x86.ActiveCfg = Release|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Debug|x64.Build.0 = Debug|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Debug|x86.Build.0 = Debug|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Release|x64.ActiveCfg = Release|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Release|x64.Build.0 = Release|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Release|x86.ActiveCfg = Release|Any CPU
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -152,5 +166,6 @@ Global
 		{26F934F2-EA45-4BC0-BE5E-9BA7A68D3D7D} = {8FD3C203-ACA7-47B8-B64F-86DDC6989AD6}
 		{6D8903CA-B842-48F1-BC3D-FFF68CCA68C6} = {A3076507-5989-4BDE-A1FD-E920A50394D8}
 		{04597E5A-42DC-47E5-8572-00A9ECF13C85} = {8FD3C203-ACA7-47B8-B64F-86DDC6989AD6}
+		{4BE4F4E1-B12B-41BB-B8C7-88D96ED564F4} = {8FD3C203-ACA7-47B8-B64F-86DDC6989AD6}
 	EndGlobalSection
 EndGlobal
